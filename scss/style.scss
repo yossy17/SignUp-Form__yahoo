@@ -30,9 +30,9 @@ body {
   flex-flow: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  max-width: 500px;
+  width: clamp(12.5rem, 5.682rem + 34.09vw, 31.25rem);
   background-color: #fff;
+  margin-inline: auto;
   border-radius: 25px;
   box-shadow:
     0 10px 15px -3px rgba(0, 0, 0, 0.1),
@@ -126,9 +126,11 @@ body {
     border: none;
     cursor: pointer;
 
-    &:hover {
-      background: #41a2d6;
-      transition: all 0.3s;
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background: #41a2d6;
+        transition: all 0.3s;
+      }
     }
   }
 }
