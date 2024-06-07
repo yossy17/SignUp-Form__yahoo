@@ -5,10 +5,24 @@ const passwordInput = document.getElementById("password");
 const useridError = document.getElementById("useridError");
 const emailError = document.getElementById("emailError");
 const passwordError = document.getElementById("passwordError");
+const viewToggle = document.getElementById("view");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   validateForm();
+});
+
+viewToggle.addEventListener("click", () => {
+  const icon = viewToggle.querySelector("i");
+  if (passwordInput.type === "password") {
+    passwordInput.type = "text";
+    icon.classList.remove("fa-eye-slash");
+    icon.classList.add("fa-eye");
+  } else {
+    passwordInput.type = "password";
+    icon.classList.remove("fa-eye");
+    icon.classList.add("fa-eye-slash");
+  }
 });
 
 function validateForm() {
