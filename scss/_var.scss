@@ -1,0 +1,33 @@
+// ----------------------------------------------------------------------------------------------------
+
+// breakpoint
+$breakpoints: (
+  'sm': 'screen and (min-width: 640px)',
+  'md': 'screen and (min-width: 768px)',
+  'lg': 'screen and (min-width: 1024px)',
+  'xl': 'screen and (min-width: 1280px)',
+  'xxl': 'screen and (min-width: 1536px)',
+) !default;
+@mixin mq($breakpoint) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+// ----------------------------------------------------------------------------------------------------
+
+// hover
+@mixin hover {
+  //PCのみhover要素を当てる
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @content;
+    }
+  }
+  //IE11対応用
+  @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    &:hover {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./Styles/style.css" />
+    <title>TEST</title>
+  </head>
+  <body>
+    <form class="validationForm" name="nyForm" autocomplete="on" novalidate>
+      <!-- UserIDの入力フォーム -->
+      <div class="validationForm__area">
+        <div class="validationForm__field">
+          <input
+            class="validationForm__input"
+            id="userid"
+            type="text"
+            name="userid"
+            minlength="3"
+            maxlength="10"
+            placeholder="Taro Example"
+            pattern="^[a-zA-Z0-9]{3,10}$"
+            autocorrect="off"
+            autocapitalize="off"
+            required
+          />
+          <label class="validationForm__label" for="userid">UserID</label>
+        </div>
+        <span id="useridError" class="error"></span>
+      </div>
+
+      <!-- MailAddress入力フォーム -->
+      <div class="validationForm__area">
+        <div class="validationForm__field">
+          <input
+            class="validationForm__input"
+            id="email"
+            type="email"
+            name="email"
+            placeholder="example@example.com"
+            pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$"
+            required
+          />
+          <label class="validationForm__label" for="email">MailAddress</label>
+        </div>
+        <span id="emailError" class="error"></span>
+      </div>
+
+      <!-- PassWord入力フォーム -->
+      <div class="validationForm__area">
+        <div class="validationForm__field">
+          <input
+            class="validationForm__input"
+            id="password"
+            type="password"
+            name="password"
+            minlength="3"
+            maxlength="10"
+            placeholder="Example123"
+            pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[a-zA-Z\d]{3,10}$"
+            inputmode="email"
+            required
+          />
+          <label class="validationForm__label" for="password">PassWord</label>
+        </div>
+        <span id="passwordError" class="error"></span>
+      </div>
+
+      <!-- 登録ボタン -->
+      <p><input type="submit" value="登録" id="touroku" /></p>
+    </form>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
