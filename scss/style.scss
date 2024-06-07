@@ -12,6 +12,7 @@ body {
   width: 100%;
   min-height: 100vh;
   font-family: "Poppins", sans-serif;
+  touch-action: manipulation;
 }
 
 /* --- Required CSS (customizable) --- */
