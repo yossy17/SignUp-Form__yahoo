@@ -12,19 +12,6 @@ form.addEventListener("submit", (event) => {
   validateForm();
 });
 
-viewToggle.addEventListener("click", () => {
-  const icon = viewToggle.querySelector("i");
-  if (passwordInput.type === "password") {
-    passwordInput.type = "text";
-    icon.classList.remove("fa-eye-slash");
-    icon.classList.add("fa-eye");
-  } else {
-    passwordInput.type = "password";
-    icon.classList.remove("fa-eye");
-    icon.classList.add("fa-eye-slash");
-  }
-});
-
 function validateForm() {
   let isValid = true;
 
@@ -106,3 +93,17 @@ function clearError(errorElement) {
   errorElement.textContent = "";
   errorElement.style.display = "none";
 }
+
+// パスワード表示切り替え
+viewToggle.addEventListener("click", () => {
+  const icon = viewToggle.querySelector("i");
+  if (passwordInput.type === "password") {
+    passwordInput.type = "text";
+    icon.classList.remove("fa-eye-slash");
+    icon.classList.add("fa-eye");
+  } else {
+    passwordInput.type = "password";
+    icon.classList.remove("fa-eye");
+    icon.classList.add("fa-eye-slash");
+  }
+});
