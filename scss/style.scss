@@ -1,48 +1,53 @@
 @use "./var" as *;
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ingrid+Darling&family=Lobster&family=Roboto&family=Tiny5&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ingrid+Darling&family=Lobster&display=swap");
 
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-flow: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  min-height: 100vh;
-  font-family: "Poppins";
+  font-family: "Roboto";
   touch-action: manipulation;
 }
 
 /* --- Required CSS (customizable) --- */
+
+body {
+  background: #0076b5;
+}
 
 .error {
   color: red;
   font-size: 1rem;
 }
 
-body {
-  background: #0076b5;
-}
-
 .validationForm {
   display: flex;
   flex-flow: column;
   align-items: center;
-  justify-content: center;
   width: clamp(12.5rem, 5.682rem + 34.09vw, 31.25rem);
   background-color: #fff;
   margin-inline: auto;
   border-radius: 25px;
   box-shadow:
-    0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  padding: 100px 70px;
+    0 10px 15px -3px rgba(0, 0, 0, 0.3),
+    0 4px 6px -2px rgba(0, 0, 0, 0.15);
+  padding: 50px 70px 100px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+
+  &__title {
+    font-size: 2rem;
+    font-family: "Lobster";
+  }
 
   &__area {
     width: 100%;
@@ -67,17 +72,9 @@ body {
       transform: translateX(-50%);
       transition: all 0.4s ease;
     }
-
     &:hover:before {
       width: 100%;
     }
-  }
-
-  #view {
-    position: absolute;
-    right: 0;
-    top: 8px;
-    cursor: pointer;
   }
 
   &__input {
@@ -117,6 +114,13 @@ body {
     transition: all 0.3s ease;
     pointer-events: none;
     background: transparent;
+  }
+
+  #view {
+    position: absolute;
+    right: 0;
+    top: 8px;
+    cursor: pointer;
   }
 
   #touroku {

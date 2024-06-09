@@ -1,17 +1,28 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignUp Form</title>
+    <meta
+      name="description"
+      content="This project is for a sample made by Yossy."
+    />
     <link rel="stylesheet" href="./Styles/style.css" />
     <link
       href="https://use.fontawesome.com/releases/v6.5.2/css/all.css"
       rel="stylesheet"
     />
-    <title>TEST</title>
   </head>
   <body>
-    <form class="validationForm" name="nyForm" autocomplete="on" novalidate>
+    <form
+      class="validationForm"
+      name="nyForm"
+      autocomplete="on"
+      oncontextmenu="return false"
+      novalidate
+    >
+      <h1 class="validationForm__title">SignUp Form</h1>
       <!-- UserIDの入力フォーム -->
       <div class="validationForm__area">
         <div class="validationForm__field">
@@ -20,9 +31,10 @@
             id="userid"
             type="text"
             name="userid"
-            placeholder="Example"
             autocorrect="off"
             autocapitalize="off"
+            oncopy="return false"
+            placeholder="Example"
             required
           />
           <label class="validationForm__label" for="userid">UserID</label>
@@ -30,7 +42,7 @@
         <span id="useridError" class="error"></span>
       </div>
 
-      <!-- MailAddress入力フォーム -->
+      <!-- Email入力フォーム -->
       <div class="validationForm__area">
         <div class="validationForm__field">
           <input
@@ -38,15 +50,16 @@
             id="email"
             type="email"
             name="email"
+            oncopy="return false"
             placeholder="example@example.com"
             required
           />
-          <label class="validationForm__label" for="email">MailAddress</label>
+          <label class="validationForm__label" for="email">Email</label>
         </div>
         <span id="emailError" class="error"></span>
       </div>
 
-      <!-- PassWord入力フォーム -->
+      <!-- Password入力フォーム -->
       <div class="validationForm__area">
         <div class="validationForm__field">
           <input
@@ -54,10 +67,11 @@
             id="password"
             type="password"
             name="password"
+            oncopy="return false"
             placeholder="Example123"
             required
           />
-          <label class="validationForm__label" for="password">PassWord</label>
+          <label class="validationForm__label" for="password">Password</label>
         </div>
         <span id="view">
           <i class="far fa-eye-slash"></i>
